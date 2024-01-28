@@ -15,3 +15,8 @@
   * select which changes you want to upload
   * add a descriptive(!) commit message of what you did
   * press "Commit and Push..." ![commmit push](docs/images/commit_push.png)
+  * review your changes and press push
+* __download new changes in Rider__
+  * open the Git menu in the top bar
+  * select "Pull..."
+  * press pull again (from master)
