@@ -14,17 +14,7 @@ public class GameManager : MonoBehaviour
             // singleton: there can only ever be one instance of a GameManager.
             Destroy(gameObject);
     }
-
-    // Start is called before the first frame update
-    private void Start()
-    {
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-    }
-
+    
     public void RestartGame()
     {
         Debug.Log("Restart Game");

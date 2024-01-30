@@ -6,16 +6,7 @@ public class PlayerLives : MonoBehaviour
     public int lives = 3;
 
     public Image[] livesUI;
-
-    // Start is called before the first frame update
-    private void Start()
-    {
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-    }
+    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
