@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using Bees;
 using UnityEngine;
 
 public class  Projectile : MonoBehaviour
@@ -23,8 +20,10 @@ public class  Projectile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bee"))
         {
-            Destroy(collision.gameObject);
+            var bee = collision.gameObject;
+            Destroy(bee);
             Destroy(gameObject);
+            BeeManger.instance.UpdateBoundsByChildren();
         }
 
         if (collision.gameObject.CompareTag("Boundary"))

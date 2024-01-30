@@ -16,14 +16,17 @@ namespace Bees
         // Update is called once per frame
         void Update()
         {
-            transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag("Boundary"))
             {
-                transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                var position = transform.position;
+                position =
+                    new Vector3(position.x, position.y - 0.5f, position.z);
+                transform.position = position;
                 moveSpeed *= -1;
             }
         }

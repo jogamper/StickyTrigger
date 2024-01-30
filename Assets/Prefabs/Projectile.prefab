@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2867523287863985970}
   - component: {fileID: 6211564700393208710}
   m_Layer: 0
-  m_Name: projectile
+  m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2104773964596273009}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.9604, y: -1.3062, z: 0}
-  m_LocalScale: {x: 0.3015, y: 0.3015, z: 0.3015}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,9 +6,23 @@ namespace Bees
 {
     public class BeeManger : MonoBehaviour
     {
+        public static BeeManger instance;
         public GameObject beeFab;
 
         private List<GameObject> bees;
+
+        private void Awake()
+        {
+            if (instance != null && instance != this) 
+            { 
+                Destroy(this); 
+            } 
+            else 
+            { 
+                instance = this; 
+            }
+        }
+
         // Start is called before the first frame update
         void Start()
         {
@@ -24,19 +39,16 @@ namespace Bees
                     bees.Add(bee);
                 }
             }
-            AddBoundsToAllChildren();
+            UpdateBoundsByChildren();
         }
-        private void AddBoundsToAllChildren()
+        public void UpdateBoundsByChildren()
         {
-
             var boxCol = gameObject.GetComponent<BoxCollider2D>();
             if (boxCol == null)
             {
                 boxCol = gameObject.AddComponent<BoxCollider2D>();
             }
-
             Bounds bounds = new Bounds(transform.position, Vector3.zero);
-
             var allDescendants = gameObject.GetComponentsInChildren<Transform>();
             foreach (Transform desc in allDescendants)
             {
