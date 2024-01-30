@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 namespace Bees
@@ -6,15 +5,14 @@ namespace Bees
     public class BeeMovement : MonoBehaviour
     {
         public float moveSpeed;
-     
+
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
-        
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
         }

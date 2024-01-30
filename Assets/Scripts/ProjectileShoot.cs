@@ -1,17 +1,25 @@
-
 using UnityEngine;
 
 public class ProjectileShoot : MonoBehaviour
 
 {
     public GameObject projectileFab;
+    public float shotsPerSecond = 1f;
+    private float time = 0;
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        time += Time.deltaTime;
+        if (1 / shotsPerSecond < time)
         {
-            Instantiate(projectileFab, transform.position, Quaternion.identity);
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Instantiate(projectileFab,
+                                    new Vector3(transform.position.x, transform.position.y + 1, transform.position.z),
+                                    Quaternion.identity);
+                time = 0;
+            }
         }
     }
 }

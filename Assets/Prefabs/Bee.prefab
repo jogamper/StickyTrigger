@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8936894331073664850}
   - component: {fileID: 4215104449983161527}
   - component: {fileID: 5453381874405241185}
+  - component: {fileID: -7126677005698158180}
   m_Layer: 0
   m_Name: Bee
   m_TagString: Bee
@@ -111,3 +112,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-7126677005698158180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2530699753599332265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b909b38f4e7b4bd083053f96f60cb7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyProjectile: {fileID: 3540570062297586571, guid: 37d563ad84f3a4bef8bef6d355e4766d, type: 3}
+  spawnMax: 30
+  spawnMin: 15
