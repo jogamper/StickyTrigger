@@ -1,4 +1,3 @@
-using Bees;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -22,7 +21,7 @@ public class Projectile : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
-            BeeManger.instance.UpdateBoundsByChildren();
+            Bees.BeeManager.instance.UpdateBoundsByChildren();
         }
         else if (collision.gameObject.CompareTag("Boundary")) Destroy(gameObject);
     }

@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace Bees
 {
-    public class BeeManger : MonoBehaviour
+    public class BeeManager : MonoBehaviour
     {
-        public static BeeManger instance;
+        public static BeeManager instance;
         public GameObject beeFab;
 
         public int rows = 3;
@@ -15,10 +15,12 @@ namespace Bees
         
         private void Awake()
         {
-            if (instance != null && instance != this)
-                Destroy(this);
-            else
+            // make it a singelton
+            if (instance == null)
                 instance = this;
+            else if (instance != this)
+                // singleton: there can only ever be one instance of a GameManager.
+                Destroy(gameObject);
         }
 
         // Start is called before the first frame update
@@ -47,12 +49,11 @@ namespace Bees
         public void UpdateBoundsByChildren()
         {
             var boxCol = gameObject.GetComponent<BoxCollider2D>();
-            if (boxCol == null) boxCol = gameObject.AddComponent<BoxCollider2D>();
             var bounds = new Bounds(transform.position, Vector3.zero);
             var allDescendants = gameObject.GetComponentsInChildren<Transform>();
             foreach (var desc in allDescendants)
             {
-                var childRenderer = desc.GetComponent<Renderer>();
+                var childRenderer = desc.gameObject.GetComponent<SpriteRenderer>();
                 if (childRenderer != null) bounds.Encapsulate(childRenderer.bounds);
                 boxCol.offset = bounds.center - transform.position;
                 boxCol.size = bounds.size;
